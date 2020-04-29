@@ -1,0 +1,94 @@
+let mapleader = " "
+set clipboard=unnamedplus,unnamed " 共享系统剪切板
+set incsearch " /word  实时搜索匹配, 按 Enter 跳到匹配位置, 按 ESC 直接返回到原来位置
+
+set ignorecase " 搜索的时候忽略大小写
+set smartcase  " 智能的判断是否忽略大小写，当输入的单词包含大写的时候 不忽略大小写
+set scrolloff=3         " 3 lines above/below cursor when scrolling
+" Shift-j 删除 行尾的换行符，也就是把当前行下一行提到当前行来
+" set ideajoin
+" set clipboard+=ideaput 剪切板
+
+imap ,. <Esc>
+vmap ,. <Esc>
+
+nmap == :action ReformatCode<cr>  " 映射 == 到 格式化文本上
+" 重命名
+nmap <leader>r :action RenameElement<CR>
+" 格式化当前文件
+nmap <leader>f :action ReformatCode<CR><esc>
+" esc 使用jj
+" imap jj <esc>
+nmap <leader>wq :wq<CR>
+nmap <leader>w :w<CR>
+nmap <leader>s :action GotoRelated<cr>  " .h 和 .cpp 互相跳转
+nmap Y y$ " 复制 从光标到行尾 所在范围的文本
+nmap U <C-r> " 使用 U 代替 取消撤销  u 是撤销
+nmap <silent> <C-l>  :<C-u>nohlsearch<CR><C-l> " 关闭查找高亮
+
+" 显示当前光标位置
+set cursorcolumn
+set cursorline
+
+" gk 表示上移一个屏幕行, 用在开启 wrap 的情况下; 屏幕行和实际行的区别
+nmap k gk
+nmap gk k
+nmap j gj
+nmap gj j
+
+" 搜索结果居中显示
+nmap <silent> n nzz
+nmap <silent> N Nzz
+nmap <silent> * *zz
+nmap <silent> # #zz
+nmap <silent> g* g*zz
+
+" 一些快捷键
+
+" Ctrl-p 显示函数参数
+
+" 屏幕移动操作
+" H 跳转到屏幕顶端（如果设置了set so=n，则跳转到第n行）
+" L 跳转到屏幕底端（如果设置了set so=n，则跳转到倒数第n行）
+" M 跳转到屏幕中间
+
+" 查找
+" 在普通模式下，按下 / 键会调出 Vim 的查找提示符，可在它的后面输入要查找的模式或者原义文本。另外，只有当我们按下 <CR> 键时，Vim 才会执行查找命令，而如果换用 <Esc> 键的话，查找提示符会消失，我们将重回普通模式
+" /正则表达式 跳转到下一个匹配。用n或N在匹配间切换。
+" ?正则表达式 跳转到上一个匹配。用n或N在匹配间切换。
+" n 命令用于跳转到下一处匹配，而 N 命令则用于跳转到上一处匹配
+" s/old/new 替换当前行的第一个 old
+" s/old/new/g 替换当前行的所有 old
+" s/old/new/gc 替换当前行的所有 old，并提示确认 y和n 确认与否
+" %s/old/new/g 替换所有 old
+
+" 跳转
+" '. 跳转到之前修改位置
+" '' 在前一次跳转位置与当前位置间切换
+" Ctrl-] 跳转到当前标识符的定义位置 （相当于在当前光标位置的单词上按住ctrl用鼠标点击）
+" # 跳转到上一个 光标所在单词 比如说 光标在 the 上，那么 按下#会跳转到上一个 the
+" * 跳转到下一个 光标所在单词
+" Ctrl-o: 后退  Ctrl-i: 前进
+" f 或 F 跳转到本行某个字符，小写f向右查找，大写F向左查找。用;或,在匹配间切换
+" t 或 T 跳转到本行某个字符之前，小写t向右查找，大写T向左查找。用;或,在匹配间切换
+
+
+" 文本对象操作
+" Vim 的文本对象由两个字符组成，第一个字符永远是 i 或是 a
+" 文本对象可配合 y(复制),  c(替换), d(删除), v(选中)
+" i 开头的文本对象会选择分隔符内部的文本， inside,  iw,  iW,  i\", i],  i}
+" 而以 a 开头的文本对象则会选择包括分隔符在内的整个文本, around,  aw, aW, a\" a] a}
+" aw 和 aW的区别：当前单词及一个空格:当前字串及一个空格
+
+" 标记 m
+" m{letter} 命令允许我们在当前光标位置创建一个位置标记（参见:h m ）。
+" 小写字母会创建局部于缓冲区的标记(仅能在本文件内跳转)，而大写字母则创建全局标记(可在文件间跳转)。
+" 设置好标记后，就可以用 `{letter} 命令使光标快速回到标记所在之处
+
+
+" 一些 Idea 的快捷键
+" Ctrl + Shift + A 打开action快速搜索窗口
+" Alt + 数字/字母 打开对应的扩展工具栏
+" Double Shift 快速搜索
+" Ctrl + Tab 打开Switcher，进行扩展工具栏或者文件的快速切换
+
