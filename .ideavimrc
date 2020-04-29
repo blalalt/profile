@@ -9,45 +9,45 @@ set scrolloff=3         " 3 lines above/below cursor when scrolling
 " set ideajoin
 " set clipboard+=ideaput 剪切板
 
-set nu　　" 显示行号 set nonu　　//不显示行号
-set expandtab　　" 把tab 显示成空格
-" set shiftwidth=4　　" 自动缩进4格
-set tabstop=4 " tab 4 个空格
+set nu " 显示行号 set nonu　　//不显示行号
+set expandtab " 把tab 显示成空格
+" set shiftwidth=4   " 自动缩进4格
+set tabstop=4  " tab 4 个空格
 
 
-imap ,. <Esc>
-vmap ,. <Esc>
+inoremap ,. <Esc>
+vnoremap ,. <Esc>
 
-nmap == :action ReformatCode<cr>  " 映射 == 到 格式化文本上
+nnoremap  == :action ReformatCode<cr>  " 映射 == 到 格式化文本上
 " 重命名
-nmap <leader>r :action RenameElement<CR>
+nnoremap  <leader>r :action RenameElement<CR>
 " 格式化当前文件
-nmap <leader>f :action ReformatCode<CR><esc>
+nnoremap  <leader>f :action ReformatCode<CR><esc>
 " esc 使用jj
 " imap jj <esc>
-nmap <leader>wq :wq<CR>
-nmap <leader>w :w<CR>
-nmap <leader>s :action GotoRelated<cr>  " .h 和 .cpp 互相跳转
-nmap Y y$ " 复制 从光标到行尾 所在范围的文本
-nmap U <C-r> " 使用 U 代替 取消撤销  u 是撤销
-nmap <silent> <C-l>  :<C-u>nohlsearch<CR><C-l> " 关闭查找高亮
+nnoremap  <leader>wq :wq<CR>
+nnoremap  <leader>w :w<CR>
+nnoremap  <leader>s :action GotoRelated<cr>  " .h 和 .cpp 互相跳转
+nnoremap  Y y$ " 复制 从光标到行尾 所在范围的文本
+nnoremap  U <C-r> " 使用 U 代替 取消撤销  u 是撤销
+nnoremap  <silent> <C-l>  :<C-u>nohlsearch<CR><C-l> " 关闭查找高亮
 
 " 显示当前光标位置
-set cursorcolumn
+" set cursorcolumn
 set cursorline
 
 " gk 表示上移一个屏幕行, 用在开启 wrap 的情况下; 屏幕行和实际行的区别
-nmap k gk
-nmap gk k
-nmap j gj
-nmap gj j
+nnoremap  k gk
+nnoremap  gk k
+nnoremap  j gj
+nnoremap  gj j
 
 " 搜索结果居中显示
-nmap <silent> n nzz
-nmap <silent> N Nzz
-nmap <silent> * *zz
-nmap <silent> # #zz
-nmap <silent> g* g*zz
+nnoremap  <silent> n nzz
+nnoremap  <silent> N Nzz
+nnoremap  <silent> * *zz
+nnoremap  <silent> # #zz
+nnoremap  <silent> g* g*zz
 
 " 一些快捷键
 
