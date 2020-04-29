@@ -9,6 +9,12 @@ set scrolloff=3         " 3 lines above/below cursor when scrolling
 " set ideajoin
 " set clipboard+=ideaput 剪切板
 
+set nu　　" 显示行号 set nonu　　//不显示行号
+set expandtab　　" 把tab 显示成空格
+" set shiftwidth=4　　" 自动缩进4格
+set tabstop=4 " tab 4 个空格
+
+
 imap ,. <Esc>
 vmap ,. <Esc>
 
